@@ -30,7 +30,7 @@ a:hover:first-letter {
     max-width: 50em;
     margin: auto;
     margin-top: 25px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 #info {
@@ -70,6 +70,14 @@ a:hover:first-letter {
 
 .pub_teasor img {
     max-width: 11em;
+}
+
+#preview{
+	position: absolute;
+    border: 1px solid black;
+	background: white;
+    padding: 5px;
+	display: none;
 }
 
 .pub_info {
