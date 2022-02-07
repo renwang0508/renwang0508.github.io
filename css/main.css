@@ -73,11 +73,11 @@ a:hover:first-letter {
 }
 
 #preview{
-	position: absolute;
+    position: absolute;
     border: 1px solid black;
-	background: white;
+    background: white;
     padding: 5px;
-	display: none;
+    display: none;
 }
 
 .pub_info {
