@@ -1,0 +1,92 @@
+@import "font.css";
+
+body {
+    font-size: 16px;
+    font-family: Helvetica, 'Lato', Arial;
+    /* background-color: #ecfefd; */
+}
+
+a {
+    text-decoration: none;
+    color: #0367b0;
+    display: inline-block;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:hover:first-letter {
+    font-weight: bold;
+}
+
+.hidden_table {
+    width: 100%;
+    border: 0px;
+    border-spacing: 0px;
+}
+
+#container {
+    max-width: 50em;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 12px;
+}
+
+#info {
+    width: 28em;
+}
+
+.position {
+    margin-top: 5px;
+    display: inline-block;
+    list-style-type: none;
+}
+
+#social {
+    margin-top: 20px;
+    list-style-type: none;
+}
+
+#photo {
+    vertical-align: middle;
+}
+
+#photo img{
+    border-radius: 50%;
+    max-height: 200px;
+}
+
+#bio {
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.pub_info {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    vertical-align: middle;
+    padding-left: 30px;
+}
+
+.pub_teasor {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    vertical-align: middle;
+}
+
+.pub_teasor img {
+    max-width: 11em;
+}
+
+div.title {
+    font-weight: bold;
+}
+
+span.me {
+    text-decoration: underline;
+}
+
+span.publisher {
+    font-style: italic;
+}
