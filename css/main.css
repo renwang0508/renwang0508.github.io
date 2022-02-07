@@ -30,7 +30,7 @@ a:hover:first-letter {
     max-width: 50em;
     margin: auto;
     margin-top: 25px;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
 #info {
@@ -59,7 +59,7 @@ a:hover:first-letter {
 
 #bio {
     padding-top: 10px;
-    padding-bottom: 15px;
+    padding-bottom: 12px;
 }
 
 .pub_teasor {
