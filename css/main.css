@@ -62,13 +62,6 @@ a:hover:first-letter {
     padding-bottom: 15px;
 }
 
-.pub_info {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    vertical-align: middle;
-    padding-left: 30px;
-}
-
 .pub_teasor {
     padding-top: 12px;
     padding-bottom: 12px;
@@ -79,14 +72,29 @@ a:hover:first-letter {
     max-width: 11em;
 }
 
-div.title {
+.pub_info {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    vertical-align: middle;
+    padding-left: 30px;
+}
+
+.title {
     font-weight: bold;
 }
 
-span.me {
+.authors a {
+    color: black;
+}
+
+.authors span {
+    display: inline-block;
+}
+
+.authors .me {
     text-decoration: underline;
 }
 
-span.publisher {
+.publisher {
     font-style: italic;
 }
