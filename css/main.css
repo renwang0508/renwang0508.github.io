@@ -87,6 +87,10 @@ a:hover:first-letter {
     color: black;
 }
 
+.authors a:hover:first-letter {
+    font-weight: inherit;
+}
+
 .authors span {
     display: inline-block;
 }
