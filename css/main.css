@@ -3,13 +3,12 @@
 body {
     font-size: 16px;
     font-family: Helvetica, 'Lato', Arial;
-    background-color: #45f5f0;
+    background-color: #1ef3ed;
 }
 
 a {
     text-decoration: none;
     color: #0367b0;
-    /* color: #0967a2; */
     display: inline-block;
 }
 
