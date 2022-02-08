@@ -3,12 +3,13 @@
 body {
     font-size: 16px;
     font-family: Helvetica, 'Lato', Arial;
-    /* background-color: #ecfefd; */
+    background-color: #45f5f0;
 }
 
 a {
     text-decoration: none;
     color: #0367b0;
+    /* color: #0967a2; */
     display: inline-block;
 }
 
@@ -29,12 +30,15 @@ a:hover:first-letter {
 #container {
     max-width: 50em;
     margin: auto;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 25px;
 }
 
 #info {
-    width: 28em;
+    width: 29em;
 }
 
 .position {
