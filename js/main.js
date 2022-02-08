@@ -7,7 +7,7 @@ function imageResize(ele, maxHeight) {
 }
 
 function imagePreview() {
-    offset = 25;
+    xOffset = 25;
     maxHeight = 200;
     $("a.preview").hover(
         function(ele) {
@@ -22,11 +22,12 @@ function imagePreview() {
             if($("#preview img").height() > maxHeight) {
                 imageResize($("#preview img"), maxHeight);
             }
-            yOffset = -offset - $("#preview img").height() / 2;
+            yOffset = -xOffset - $("#preview img").height() / 2;
             $("#preview").css("top", (ele.pageY + yOffset) + "px");
-            $("#preview").css("left", (ele.pageX + offset) + "px");
+            $("#preview").css("left", (ele.pageX + xOffset) + "px");
         }
     );
-};
+}
 
 $(document).ready(function(){ imagePreview(); });
+
