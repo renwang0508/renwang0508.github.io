@@ -36,8 +36,13 @@ a:hover:first-letter {
     border-radius: 25px;
 }
 
+#card {
+    max-width: 42em;
+    margin: auto;
+}
+
 #info {
-    width: 29em;
+    width: 27em;
 }
 
 .position {
