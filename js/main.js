@@ -1,14 +1,14 @@
 function imageResize(ele, maxHeight) {
-    height = ele.height();
-    width = ele.width();
-    scale = maxHeight / height;
+    const height = ele.height();
+    const width = ele.width();
+    const scale = maxHeight / height;
     ele.css("height", maxHeight);
     ele.css("width", width * scale);
 }
 
 function imagePreview() {
-    xOffset = 25;
-    maxHeight = 200;
+    const xOffset = 25;
+    const maxHeight = 200;
     $("a.preview").hover(
         function(ele) {
             $("body").append("<p id='preview'><img src='" + this.href + "'></p>");
@@ -22,7 +22,7 @@ function imagePreview() {
             if($("#preview img").height() > maxHeight) {
                 imageResize($("#preview img"), maxHeight);
             }
-            yOffset = -xOffset - $("#preview img").height() / 2;
+            const yOffset = -xOffset - $("#preview img").height() / 2;
             $("#preview").css("top", (ele.pageY + yOffset) + "px");
             $("#preview").css("left", (ele.pageX + xOffset) + "px");
         }
