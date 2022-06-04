@@ -9,15 +9,10 @@ body {
 a {
     text-decoration: none;
     color: #0367b0;
-    display: inline-block;
 }
 
 a:hover {
     text-decoration: underline;
-}
-
-a:hover:first-letter {
-    font-weight: bold;
 }
 
 .hidden_table {
