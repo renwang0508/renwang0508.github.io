@@ -1,8 +1,8 @@
-@import "font.css";
+@import "lato.css";
 
 body {
     font-size: 16px;
-    font-family: Helvetica, 'Lato', Arial;
+    font-family: 'Lato', Helvetica, Arial;
     background-color: #edeceb;
 }
 
