@@ -95,10 +95,6 @@ a:hover {
     color: black;
 }
 
-.authors a:hover:first-letter {
-    font-weight: inherit;
-}
-
 .authors span {
     display: inline-block;
 }
@@ -110,3 +106,8 @@ a:hover {
 .publisher {
     font-style: italic;
 }
+
+.items span {
+    display: inline-block;
+}
+
