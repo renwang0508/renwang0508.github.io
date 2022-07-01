@@ -30,4 +30,3 @@ function imagePreview() {
 }
 
 $(document).ready(function(){ imagePreview(); });
-
