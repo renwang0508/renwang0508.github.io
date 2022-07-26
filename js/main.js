@@ -33,17 +33,33 @@ function setPreview() {
 }
 
 function setDelimiter() {
+    function checkSpan(ele) {
+        return ele.tagName === "SPAN";
+    }
+
+    const ua = window.navigator.userAgent;
+    const isNotIE = !(/MSIE|Trident/.test(ua));
     const items = document.getElementsByClassName("items");
+    const authors = document.getElementsByClassName("authors");
+    let spans;
+
     for (let i=0; i<items.length; i++) {
-        let spans = items[i].querySelectorAll(":scope > span");
+        if (isNotIE) {
+            spans = items[i].querySelectorAll(":scope > span");
+        } else {
+            spans = Array.prototype.filter.call(items[i].children, checkSpan);
+        }
         for (let j=0; j<spans.length-1; j++) {
             spans[j].innerHTML += " /";
         }
     }
 
-    const authors = document.getElementsByClassName("authors");
     for (let i=0; i<authors.length; i++) {
-        let spans = authors[i].querySelectorAll(":scope > span");
+        if (isNotIE) {
+            spans = authors[i].querySelectorAll(":scope > span");
+        } else {
+            spans = Array.prototype.filter.call(authors[i].children, checkSpan);
+        }
         for (let j=0; j<spans.length-1; j++) {
             spans[j].innerHTML += ",";
         }
