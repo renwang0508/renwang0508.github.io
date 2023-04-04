@@ -13,16 +13,12 @@ function setPreview() {
 
     const previewLinks = document.querySelectorAll("a.preview");
 
-    previewLinks.forEach(link => {
+    previewLinks.forEach(function(link) {
         link.addEventListener("mouseover", function(event) {
             const previewEle = document.createElement("p");
-            const previewImg = document.createElement("img");
-
             previewEle.id = "preview";
-            previewImg.src = this.href;
-            previewEle.appendChild(previewImg);
+            previewEle.innerHTML = "<img src='" + this.href + "'>";
             document.body.appendChild(previewEle);
-            previewEle.style.display = "block";
             setTimeout(() => previewEle.style.opacity = "1", 0);
         });
 
@@ -40,7 +36,6 @@ function setPreview() {
             if (previewImg.offsetHeight > maxHeight) {
                 resizeImg(previewImg, maxHeight);
             }
-
             const yOffset = -xOffset - previewImg.offsetHeight / 2;
             previewEle.style.top = (event.pageY + yOffset) + "px";
             previewEle.style.left = (event.pageX + xOffset) + "px";
