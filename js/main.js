@@ -1,74 +1,81 @@
 function resizeImg(ele, maxHeight) {
-    const height = ele.height();
-    const width = ele.width();
+    const height = ele.offsetHeight;
+    const width = ele.offsetWidth;
     const scale = maxHeight / height;
 
-    ele.css("height", maxHeight);
-    ele.css("width", width * scale);
+    ele.style.height = maxHeight + "px";
+    ele.style.width = (width * scale) + "px";
 }
 
 function setPreview() {
     const xOffset = 25;
     const maxHeight = 200;
 
-    $("a.preview").hover(
-        function(ele) {
-            $("body").append("<p id='preview'><img src='" + this.href + "'></p>");
-            $("#preview").fadeIn("fast");
-        }, function() {
-            $("#preview").remove();
-        }
-    );
+    const previewLinks = document.querySelectorAll("a.preview");
 
-    $("a.preview").mousemove(
-        function(ele) {
-            if ($("#preview img").height() > maxHeight) {
-                resizeImg($("#preview img"), maxHeight);
+    previewLinks.forEach(link => {
+        link.addEventListener("mouseover", function(event) {
+            const previewEle = document.createElement("p");
+            const previewImg = document.createElement("img");
+
+            previewEle.id = "preview";
+            previewImg.src = this.href;
+            previewEle.appendChild(previewImg);
+            document.body.appendChild(previewEle);
+            previewEle.style.display = "block";
+            setTimeout(() => previewEle.style.opacity = "1", 0);
+        });
+
+        link.addEventListener("mouseout", function() {
+            const previewEle = document.getElementById("preview");
+            if (previewEle) {
+                document.body.removeChild(previewEle);
             }
-            const yOffset = -xOffset - $("#preview img").height() / 2;
-            $("#preview").css("top", (ele.pageY + yOffset) + "px");
-            $("#preview").css("left", (ele.pageX + xOffset) + "px");
-        }
-    );
+        });
+
+        link.addEventListener("mousemove", function(event) {
+            const previewEle = document.getElementById("preview");
+            const previewImg = previewEle.querySelector("img");
+
+            if (previewImg.offsetHeight > maxHeight) {
+                resizeImg(previewImg, maxHeight);
+            }
+
+            const yOffset = -xOffset - previewImg.offsetHeight / 2;
+            previewEle.style.top = (event.pageY + yOffset) + "px";
+            previewEle.style.left = (event.pageX + xOffset) + "px";
+        });
+    });
 }
 
 function setDelimiter() {
-    function checkSpan(ele) {
-        return ele.tagName === "SPAN";
-    }
-
-    const ua = window.navigator.userAgent;
-    const isNotIE = !(/MSIE|Trident/.test(ua));
     const items = document.getElementsByClassName("items");
     const authors = document.getElementsByClassName("authors");
-    let spans;
 
     for (let i=0; i<items.length; i++) {
-        if (isNotIE) {
-            spans = items[i].querySelectorAll(":scope > span");
-        } else {
-            spans = Array.prototype.filter.call(items[i].children, checkSpan);
-        }
+        let spans = items[i].querySelectorAll(":scope > span");
         for (let j=0; j<spans.length-1; j++) {
             spans[j].innerHTML += " /";
         }
     }
 
     for (let i=0; i<authors.length; i++) {
-        if (isNotIE) {
-            spans = authors[i].querySelectorAll(":scope > span");
-        } else {
-            spans = Array.prototype.filter.call(authors[i].children, checkSpan);
-        }
+        let spans = authors[i].querySelectorAll(":scope > span");
         for (let j=0; j<spans.length-1; j++) {
             spans[j].innerHTML += ",";
         }
     }
 }
 
-$(document).ready(
-    function() {
-        setPreview();
-        setDelimiter();
+document.addEventListener("DOMContentLoaded", function() {
+    const ua = window.navigator.userAgent;
+    const isIE = /MSIE|Trident/.test(ua);
+    if (isIE) {
+        alert("This page does not support IE.");
+        return;
     }
-);
+
+    setPreview();
+    setDelimiter();
+});
+

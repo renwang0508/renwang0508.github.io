@@ -78,6 +78,8 @@ a:hover {
     background: white;
     padding: 5px;
     display: none;
+    transition: opacity 200ms;
+    opacity: 0;
 }
 
 .pub_info {
