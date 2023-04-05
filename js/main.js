@@ -48,14 +48,14 @@ function setDelimiter() {
     const authors = document.getElementsByClassName("authors");
 
     for (let i=0; i<items.length; i++) {
-        let spans = items[i].querySelectorAll(":scope > span");
+        let spans = items[i].querySelectorAll("span");
         for (let j=0; j<spans.length-1; j++) {
             spans[j].innerHTML += " /";
         }
     }
 
     for (let i=0; i<authors.length; i++) {
-        let spans = authors[i].querySelectorAll(":scope > span");
+        let spans = authors[i].querySelectorAll("span");
         for (let j=0; j<spans.length-1; j++) {
             spans[j].innerHTML += ",";
         }
