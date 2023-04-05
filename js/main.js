@@ -63,13 +63,6 @@ function setDelimiter() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    const ua = window.navigator.userAgent;
-    const isIE = /MSIE|Trident/.test(ua);
-    if (isIE) {
-        alert("This page does not support IE.");
-        return;
-    }
-
     setPreview();
     setDelimiter();
 });
