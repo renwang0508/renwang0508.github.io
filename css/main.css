@@ -15,7 +15,7 @@ a:hover {
     text-decoration: underline;
 }
 
-.hidden_table {
+.hidden-table {
     width: 100%;
     border: 0px;
     border-spacing: 0px;
@@ -61,14 +61,14 @@ a:hover {
     padding-bottom: 12px;
 }
 
-.pub_teaser {
+.pub-teaser {
     padding-top: 12px;
     padding-bottom: 12px;
     vertical-align: middle;
     width: 22%;
 }
 
-.pub_teaser img {
+.pub-teaser img {
     width: 100%;
 }
 
@@ -81,7 +81,7 @@ a:hover {
     opacity: 0;
 }
 
-.pub_info {
+.pub-info {
     padding-top: 12px;
     padding-bottom: 12px;
     vertical-align: middle;
