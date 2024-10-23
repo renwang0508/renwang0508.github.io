@@ -11,13 +11,13 @@ function setPreview() {
     const xOffset = 25;
     const maxHeight = 200;
 
-    const previewLinks = document.querySelectorAll("a.preview");
+    const previewLinks = document.querySelectorAll("img.preview");
 
     previewLinks.forEach(function(link) {
         link.addEventListener("mouseover", function(event) {
             const previewEle = document.createElement("p");
             previewEle.id = "preview";
-            previewEle.innerHTML = "<img src='" + this.href + "'>";
+            previewEle.innerHTML = "<img src='" + this.src + "'>";
             document.body.appendChild(previewEle);
             setTimeout(() => previewEle.style.opacity = "1", 0);
         });
