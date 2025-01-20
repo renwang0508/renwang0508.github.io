@@ -105,7 +105,12 @@ a:hover {
 }
 
 .publisher {
-    font-style: italic;
+    margin-right: 6px;
+}
+
+.highlights {
+    color: red;
+    font-weight: bold;
 }
 
 .items span {
