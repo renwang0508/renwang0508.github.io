@@ -104,11 +104,7 @@ a:hover {
     text-decoration: underline;
 }
 
-.publisher {
-    margin-right: 6px;
-}
-
-.highlights {
+.book .highlights {
     color: red;
     font-weight: bold;
 }

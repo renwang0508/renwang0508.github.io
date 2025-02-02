@@ -62,8 +62,26 @@ function setDelimiter() {
     }
 }
 
+function setBookFormat() {
+    const books = document.getElementsByClassName("book");
+
+    for (let i=0; i<books.length; i++) {
+        let booktitle = books[i].querySelector(".booktitle");
+        booktitle.innerHTML = "<i>" + booktitle.innerHTML + "</i>,";
+
+        let highlights = books[i].querySelector(".highlights");
+        if (highlights) {
+            highlights.innerHTML = "(" + highlights.innerHTML + ")";
+
+            let year = books[i].querySelector(".year");
+            year.style.marginRight = "6px";
+        }
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     setPreview();
     setDelimiter();
+    setBookFormat();
 });
 
