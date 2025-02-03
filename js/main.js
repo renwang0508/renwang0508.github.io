@@ -23,14 +23,14 @@ function setPreview() {
         });
 
         link.addEventListener("mouseout", function() {
-            const previewEle = document.getElementById("preview");
+            const previewEle = document.querySelector("#preview");
             if (previewEle) {
                 document.body.removeChild(previewEle);
             }
         });
 
         link.addEventListener("mousemove", function(event) {
-            const previewEle = document.getElementById("preview");
+            const previewEle = document.querySelector("#preview");
             const previewImg = previewEle.querySelector("img");
 
             if (previewImg.offsetHeight > maxHeight) {
@@ -45,8 +45,8 @@ function setPreview() {
 }
 
 function setDelimiter() {
-    const items = document.getElementsByClassName("items");
-    const authors = document.getElementsByClassName("authors");
+    const items = document.querySelectorAll(".items");
+    const authors = document.querySelectorAll(".authors");
 
     for (let i=0; i<items.length; i++) {
         let spans = items[i].querySelectorAll("span");
@@ -64,7 +64,7 @@ function setDelimiter() {
 }
 
 function setBookFormat() {
-    const books = document.getElementsByClassName("book");
+    const books = document.querySelectorAll(".book");
 
     for (let i=0; i<books.length; i++) {
         let booktitle = books[i].querySelector(".booktitle");
