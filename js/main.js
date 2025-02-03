@@ -15,7 +15,7 @@ function setPreview() {
 
     previewLinks.forEach(function(link) {
         link.addEventListener("mouseover", function(event) {
-            const previewEle = document.createElement("p");
+            const previewEle = document.createElement("div");
             previewEle.id = "preview";
             previewEle.innerHTML = "<img src='" + this.src + "'>";
             document.body.appendChild(previewEle);
@@ -36,7 +36,8 @@ function setPreview() {
             if (previewImg.offsetHeight > maxHeight) {
                 resizeImg(previewImg, maxHeight);
             }
-            const yOffset = -xOffset - previewImg.offsetHeight / 2;
+            const padding = window.getComputedStyle(previewEle).padding;
+            const yOffset = -previewImg.offsetHeight / 2 - parseInt(padding);
             previewEle.style.top = (event.pageY + yOffset) + "px";
             previewEle.style.left = (event.pageX + xOffset) + "px";
         });
